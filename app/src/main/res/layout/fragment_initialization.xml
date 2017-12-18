@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/content_main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ipsis.scan.reporting.activities.InitializationFragment"
+    tools:showIn="@layout/activity_initialization">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottomLayout"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/header_fragment" />
+
+            <!--<android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                card_view:cardCornerRadius="2dp">-->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#ffffff">
+
+                    <RelativeLayout
+                        android:id="@+id/statusLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="16dp">
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/initialization_title_card"
+                            android:textSize="24sp"
+                            android:textColor="#000000"/>
+
+                        <TextView
+                            android:id="@+id/reportStateTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/textView2"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/initialization_starting_hour"
+                            android:textSize="16sp"
+                            android:textColor="#000000"/>
+
+                        <TextView
+                            android:id="@+id/startingHourTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/textView2"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="16dp"
+                            android:text="8:00"
+                            android:textSize="16sp"/>
+
+                        <TextView
+                            android:id="@+id/reportStatePercentTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/reportStateTextView"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/initialization_ending_hour"
+                            android:textSize="16sp"
+                            android:textColor="#000000"/>
+
+                        <TextView
+                            android:id="@+id/endingHourTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/textView2"
+                            android:layout_alignTop="@id/reportStatePercentTextView"
+                            android:layout_alignParentEnd="true"
+                            android:text="18:00"
+                            android:textSize="16sp"/>
+                    </RelativeLayout>
+
+                    <View
+                        android:id="@+id/statusDivider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorCardDivider"
+                        android:layout_below="@id/statusLayout"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_below="@id/statusDivider">
+
+                        <Button
+                            android:id="@+id/editButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="8dp"
+                            style="?android:attr/borderlessButtonStyle"
+                            android:text="@string/button_edit"
+                            android:textSize="14sp"
+                            android:textColor="#1E88E5"/>
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_marginBottom="1dp"
+                    android:background="@drawable/toolbar_dropshadow">
+                </View>
+            <!--</android.support.v7.widget.CardView>-->
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorBottomDivider"/>
+
+        <Button
+            android:id="@+id/startButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="8dp"
+            style="?android:attr/borderlessButtonStyle"
+            android:text="@string/button_start"
+            android:textSize="14sp"
+            android:textColor="#1E88E5"/>
+    </RelativeLayout>
+</RelativeLayout>

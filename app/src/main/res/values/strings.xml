@@ -1,0 +1,163 @@
+<resources>
+    <string name="app_name">BRF SCAN</string>
+    <string name="about_date">25/11/2016</string>
+
+    <string name="button_edit">MODIFIER</string>
+    <string name="button_start">COMMENCER</string>
+    <string name="button_back">RETOUR</string>
+    <string name="button_next">SUIVANT</string>
+    <string name="button_close">FERMER</string>
+    <string name="button_create">CRÉER</string>
+    <string name="button_save">ENREGISTRER</string>
+    <string name="button_send">ENVOYER</string>
+    <string name="button_yes">OUI</string>
+    <string name="button_no">NON</string>
+    <string name="button_continue">CONTINUER</string>
+    <string name="button_cancel">ANNULER</string>
+    <string name="button_open">OUVRIR</string>
+
+    <string name="login_id">Identifiant</string>
+    <string name="login_password">Mot de passe</string>
+    <string name="login_connection">CONNEXION</string>
+    <string name="login_progress_title">Connexion</string>
+    <string name="login_progress_text">Connexion en cours…</string>
+    <string name="login_error_encryption">Erreur lors de la création de votre profile, veuillez contacter un administrateur.</string>
+    <string name="login_error_connection">Erreur de connexion, veuillez vérifier vos identifiants.</string>
+    <string name="login_error_device">Erreur lors de la vérification de votre appareil, veuillez contacter un administrateur.</string>
+    <string name="login_error_cache_invalidated_title">Attention</string>
+    <string name="login_error_cache_invalidated_message">Des rapports datant du %1$s sont encore présents dans l\'application.\n\nCommencer une nouvelle journée supprimera tous les anciens rapports.</string>
+    <string name="login_error_cache_invalidated_reopen">Envoyer</string>
+    <string name="login_error_cache_invalidated_new">Nouvelle journée</string>
+    <string name="login_error_cache_sent_title">Attention</string>
+    <string name="login_error_cache_sent_message">Votre CRA de ce jour a déjà été transmis et est verrouillé. Que voulez-vous faire ?</string>
+    <string name="login_error_cache_sent_unlock">DÉVERROUILLER</string>
+    <string name="login_error_cache_sent_open">CONSULTER</string>
+    <string name="login_error_cache_sent_confirm_message">Vous devrez envoyer à nouveau votre CRA.</string>
+    <string name="login_error_erase_cache_title">Attention</string>
+    <string name="login_error_erase_cache_message">Les anciens rapports vont être supprimés.</string>
+    <string name="login_error_erase_cache_erase">Continuer</string>
+    <string name="login_error_erase_cache_cancel">Annuler</string>
+    <string name="login_error_first_time">Erreur de connexion, le premier lancement de l\'application nécessite une connexion internet. Veuillez vérifier vos paramètres.</string>
+    <string name="login_location_update_title">Mise à jour</string>
+    <string name="login_location_update_message">Une mise à jour de la base de données de transport est disponible. Le processus peut durer de 3 à 5 minutes.</string>
+    <string name="login_location_update_update">Mettre à jour</string>
+    <string name="login_location_update_continue">Continuer</string>
+    <string name="login_error_location_download_message">Erreur lors du téléchargement de la base de données de transport. Veuillez vérifier votre connexion internet.</string>
+    <string name="login_location_update_progress_message">Mise à jour des données de transport…</string>
+    <string name="login_change_password_title">Modification du mot de passe</string>
+    <string name="login_change_password_message">Votre mot de passe doit être changé avant de pouvoir accéder à l\'application.</string>
+    <string name="login_change_password_new_password">Nouveau mot de passe</string>
+    <string name="login_change_password_confirm_password">Confirmer le mot de passe</string>
+    <string name="login_change_password_length">Le mot de passe doit faire au moins 8 caractères.</string>
+    <string name="login_change_password_confirmation">Les mots de passe ne correspondent pas.</string>
+    <string name="login_change_password_connection">Erreur lors du changement de mot de passe, veuillez vérifier votre connexion internet.</string>
+    <string name="login_unsent_report">Ces agents n\'ont pas encore envoyé leur CRA :\n%1$s</string>
+
+    <string name="lock_unlock">DÉVERROUILLER</string>
+    <string name="lock_disconnect">DÉCONNEXION</string>
+    <string name="lock_informations">Si ce téléphone ne vous appartient pas, merci de l\'envoyer à :\nBRF\n54 Quai de la Rapée\n75012 Paris</string>
+    <string name="lock_informations_custom">Si ce téléphone ne vous appartient pas, merci de l\'envoyer à :\n%1$s</string>
+    <string name="lock_progress_title">Déverrouillage</string>
+    <string name="lock_progress_text">Déverrouillage en cours…</string>
+    <string name="lock_error_connection">Le mot de passe n\'est pas correct.</string>
+    <string name="lock_username">Verrouillé (%1$s)</string>
+
+    <string name="initialization_title">Nouvelle journée</string>
+    <string name="initialization_title_card">Votre journée</string>
+    <string name="initialization_starting_hour">Début</string>
+    <string name="initialization_ending_hour">Fin</string>
+
+    <string name="initialization_error_ending_hour">L\'heure de début de journée doit être inférieur à l\'heure de fin.</string>
+
+    <string name="summary_title">Récapitulatif</string>
+    <string name="summary_menu_agent">Agent BRF</string>
+    <string name="summary_menu_disconnect">Déconnexion</string>
+    <string name="summary_menu_comment">Commentaire</string>
+    <string name="summary_menu_about">À propos</string>
+    <string name="summary_send">ENVOYER</string>
+    <string name="summary_no_report">Aucun rapport</string>
+    <string name="summary_timeline_title">Avancement</string>
+    <string name="summary_timeline_state_unsent">Comptes rendus non envoyés</string>
+    <string name="summary_timeline_state_sending">Envoi en cours…</string>
+    <string name="summary_timeline_state_sent">Comptes rendus envoyés</string>
+    <string name="summary_send_reports_title">Envoyer les comptes rendus ?</string>
+    <string name="summary_send_reports_text">Il ne sera plus possible de modifier les comptes rendus, voulez-vous continuer ?</string>
+    <string name="summary_create_report_title">Ajouter un compte rendu de %1$s à %2$s</string>
+    <string name="summary_expand_day_title">Étendre votre journée ?</string>
+    <string name="summary_expand_start_time_text">Voulez-vous faire commencer votre journée à %1$s ?</string>
+    <string name="summary_send_reports_error">Impossible d\'envoyer vos comptes rendus. Il existe encore des trous dans votre journée.</string>
+    <string name="summary_close_app_title">Voulez-vous fermer l\'application ?</string>
+    <string name="summary_disconnect_title">Vous n\'avez pas encore synchronisé vos rapports. Voulez-vous quand même vous déconnecter ?</string>
+    <string name="summary_reports_sent">Le CRA a été envoyé.</string>
+    <string name="summary_email_subject">Commentaire application SCAN BRF</string>
+    <string name="summary_default_report_title">Sécurisation</string>
+    <string name="summary_default_report_auto">Automatique</string>
+    <string name="summary_default_report_type">À renseigner</string>
+
+    <string name="create_title">Mission</string>
+    <string name="create_sur_ligne">Sur ligne</string>
+    <string name="create_lieu_fixe">Lieu fixe</string>
+    <string name="create_hors_reseau">Hors réseau</string>
+    <string name="create_error_no_type">Veuillez sélectionner un type de mission.</string>
+    <string name="create_error_no_line">Veuillez d\'abord sélectionner un lieu ou une ligne.</string>
+    <string name="create_location_lieu">Lieu</string>
+    <string name="create_location_ligne">Ligne</string>
+    <string name="create_back_message">Êtes-vous sûr(e) de vouloir supprimer le rapport ?</string>
+    <string name="create_reports_sent">Les comptes rendus de votre journée ont déjà été envoyés, il n\'est plus possible d\'en ajouter.</string>
+
+    <string name="edit_no_interpellation">Aucune interpellation</string>
+    <string name="edit_mission_type">Type de mission</string>
+    <string name="edit_dialog_starting_hour">Heure de début</string>
+    <string name="edit_dialog_ending_hour">Heure de fin</string>
+    <string name="edit_starting_hour">Début :</string>
+    <string name="edit_ending_hour">Fin :</string>
+    <string name="edit_starting_location">Départ</string>
+    <string name="edit_ending_location">Arrivée</string>
+    <string name="edit_menu_remove_report">Supprimer le rapport</string>
+    <string name="edit_dialog_remove_report">Êtes-vous certain(e) de vouloir supprimer le rapport ?</string>
+    <string name="edit_dialog_date_exists">Cette heure est déjà incluse dans un compte rendu, veuillez en sélectionner une autre ou modifier un compte rendu.</string>
+    <string name="edit_dialog_date_end_before_start">L\'heure de fin de mission est inférieure à celle du début, veuillez en sélectionner une autre.</string>
+    <string name="edit_dialog_deleted_interpellation">L\'interpellation a déjà été envoyée, il n\'est plus possible de la consulter.</string>
+    <string name="edit_report_sent_interpellation">Le compte rendu a déjà été envoyé, il n\'est plus d\'ajouter d\'interpellation.</string>
+    <string name="edit_report_sent_remove">Le compte rendu a déjà été envoyé, il n\'est plus de le supprimer.</string>
+    <string name="edit_form">FORMULAIRE</string>
+    <string name="edit_interpellations">INTERPELLATIONS</string>
+    <string name="edit_interpellation_add">AJOUTER UNE INTERPELLATION</string>
+    <string name="edit_interpellation_item_title">Interpellation</string>
+    <string name="edit_extend_date_start">L\'heure selectionnée est inférieure au début de votre journée, voulez-vous prolonger ?</string>
+    <string name="edit_extend_date_end">L\'heure selectionnée est supérieure à la fin de votre journée, voulez-vous prolonger ?</string>
+
+    <string name="interpellation_menu_copy">Dupliquer l\'interpellation</string>
+    <string name="interpellation_menu_remove">Supprimer l\'interpellation</string>
+    <string name="interpellation_dialog_remove">Êtes-vous certain(e) de vouloir supprimer l\'interpellation ?</string>
+    <string name="interpellation_dialog_copy">Voulez-vous dupliquer cette interpellation ?</string>
+    <string name="interpellation_send_report_title">Envoyer l\'interpellation ?</string>
+    <string name="interpellation_send_report_text">Il ne sera plus possible de modifier l\'interpellation, voulez-vous continuer ?</string>
+    <string name="interpellation_form">INTERPELLATION</string>
+    <string name="interpellation_hour">Heure</string>
+
+    <string name="search_hint">Rechercher</string>
+    <string name="search_no_result">Pas de résultat</string>
+    <string name="search_history">HISTORIQUE</string>
+    <string name="search_near_stations">STATIONS PROCHES</string>
+
+    <string name="settings_title">Réglages</string>
+    <string name="settings_starting_hour">Heure de début de journée</string>
+    <string name="settings_ending_hour">Heure de fin de journée</string>
+
+    <string name="service_uploading">Ouvrir l\'application</string>
+
+    <string name="reporting_date">Journée du %1$s</string>
+    <string name="reporting_offline_mode">Mode déconnecté</string>
+
+    <string name="about_title">À propos</string>
+    <string name="about_name">Nom</string>
+    <string name="about_version">Version</string>
+    <string name="about_version_date">Date</string>
+    <string name="about_company">Société</string>
+    <string name="about_ipsis">IPSIS</string>
+
+    <string name="menu_show_all_day">Afficher toute la journée</string>
+
+    <string name="field_select_hint">Sélectionner…</string>
+</resources>

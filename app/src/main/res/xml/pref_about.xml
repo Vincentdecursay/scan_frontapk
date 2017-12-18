@@ -1,0 +1,21 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Preference
+        android:key="name"
+        android:title="@string/about_name"
+        android:summary="@string/app_name"/>
+
+    <Preference
+        android:key="version"
+        android:title="@string/about_version"/>
+
+    <Preference
+        android:key="version_date"
+        android:title="@string/about_version_date"
+        android:summary="@string/about_date"/>
+
+    <Preference
+        android:key="company"
+        android:title="@string/about_company"
+        android:summary="@string/about_ipsis"/>
+</PreferenceScreen>

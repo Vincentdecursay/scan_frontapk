@@ -1,0 +1,115 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="BrfTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:colorPrimary">#1E88E5</item>
+        <item name="android:colorPrimaryDark">#1565C0</item>
+        <item name="android:colorAccent">#1E88E5</item>
+
+        <item name="colorPrimary">#1E88E5</item>
+        <item name="colorPrimaryDark">#1565C0</item>
+        <item name="colorAccent">#1E88E5</item>
+        <!--<item name="actionBarStyle">@style/ActionBar</item>-->
+    </style>
+
+    <style name="BrfTheme.ActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:colorPrimary">#1E88E5</item>
+        <item name="android:colorPrimaryDark">#1565C0</item>
+        <item name="android:colorAccent">#1E88E5</item>
+
+        <item name="colorPrimary">#1E88E5</item>
+        <item name="colorPrimaryDark">#1565C0</item>
+        <item name="colorAccent">#1E88E5</item>
+        <!--<item name="actionBarStyle">@style/ActionBar</item>-->
+    </style>
+
+    <!--<style name="ActionBar" parent="Widget.AppCompat.Light.ActionBar.Solid">
+        <item name="titleTextStyle">@style/TitleTextStyle</item>
+    </style>
+
+    <style name="TitleTextStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">#FFFFFF</item>
+    </style>-->
+
+    <style name="EditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="colorControlNormal">#1E88E5</item>
+        <item name="colorControlActivated">#1E88E5</item>
+        <item name="colorControlHighlight">#1E88E5</item>
+    </style>
+
+    <style name="BrfTheme.WhiteButton" parent="Base.Widget.AppCompat.Button">
+        <item name="colorButtonNormal">#FFFFFF</item>
+    </style>
+
+    <style name="BrfTheme.BlueButton" parent="Base.Widget.AppCompat.Button">
+        <item name="colorButtonNormal">@drawable/borderless_button</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="BrfTheme.BlueButtonBorderless" parent="Base.Widget.AppCompat.Button">
+        <item name="colorButtonNormal">#1E88E5</item>
+        <item name="android:colorButtonNormal">#1E88E5</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="BrfTheme.BorderlessButton" parent="Base.Widget.AppCompat.Button.Borderless">
+        <item name="android:textColor">@drawable/borderless_button</item>
+    </style>
+
+    <style name="BrfTheme.BorderButton" parent="Base.Widget.AppCompat.Button">
+        <item name="android:textColor">@drawable/borderless_button</item>
+    </style>
+
+    <style name="BrfTheme.LoginScreen" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--<item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowTranslucentStatus">true</item>-->
+        <item name="colorPrimary">#1E88E5</item>
+        <item name="colorPrimaryDark">#0061c0</item>
+        <item name="colorAccent">#1E88E5</item>
+    </style>
+
+    <color name="searchBackgroundColor">#0f000000</color>
+
+    <style name="BrfTheme.SearchOverlay" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+
+        <item name="android:colorPrimaryDark">#e0e0e0</item>
+        <item name="colorPrimaryDark">#e0e0e0</item>
+
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="BrfTheme.Search" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--<item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>-->
+
+        <item name="android:colorPrimaryDark">#e0e0e0</item>
+        <item name="colorPrimaryDark">#e0e0e0</item>
+
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="BrfTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="BrfTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="BrfTheme.MenuLabel">
+        <item name="android:background">@drawable/menu_background</item>
+        <item name="android:textColor">#5e7d8a</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:paddingTop">7dp</item>
+        <item name="android:paddingBottom">7dp</item>
+    </style>
+
+</resources>

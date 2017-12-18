@@ -1,0 +1,1 @@
+default: --format json --out reports/Report-<%=ENV['CALABASH_DEVICE']%>.json

@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.ipsis.scan.reporting.activities.EditActivity">
+
+    <item
+        android:id="@+id/action_copy_interpellation"
+        android:orderInCategory="80"
+        android:title="@string/interpellation_menu_copy"
+        android:icon="@drawable/ic_content_copy_white_24dp"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_remove_interpellation"
+        android:orderInCategory="100"
+        android:title="@string/interpellation_menu_remove"
+        android:icon="@drawable/ic_delete_white_24dp"
+        app:showAsAction="never" />
+</menu>

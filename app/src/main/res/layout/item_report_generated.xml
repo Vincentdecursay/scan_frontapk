@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp">
+
+    <View
+        android:layout_width="8dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="0dp"
+        android:background="#E53935"
+        android:id="@+id/view3" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="50dp"
+            android:layout_height="90dp"
+            android:orientation="vertical"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/linearLayout2">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:text="8:00"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:id="@+id/startingHourTextView"
+                android:gravity="center"
+                android:layout_weight="0.25"/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="0dp"
+                android:id="@+id/imageView5"
+                android:src="@drawable/ic_arrow_down_black_36dp"
+                android:scaleType="fitCenter"
+                android:layout_weight="0.5"
+                android:layout_gravity="center_horizontal"/>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:text="8:30"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:id="@+id/endingHourTextView"
+                android:gravity="center"
+                android:layout_weight="0.25"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/linearLayout2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/summary_default_report_type"
+                android:textSize="16sp"
+                android:textColor="#E53935"
+                android:id="@+id/titleTextView"
+                android:gravity="center_vertical"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="6dp"
+                android:layout_above="@+id/textView13" />
+
+            <TextView
+                android:id="@+id/missionTypeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:paddingBottom="8dp"
+                android:text="@string/summary_default_report_title"
+                android:textSize="14sp"
+                android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:id="@+id/interpellationImageView"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/ic_access_time_red_36dp"/>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#1e000000"
+                android:id="@+id/view2"
+                android:layout_alignParentBottom="true"/>
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/summary_default_report_auto"
+                android:textColor="#a0e53935"
+                android:textSize="14sp"
+                android:layout_above="@+id/missionTypeTextView"/>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

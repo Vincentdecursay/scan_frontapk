@@ -1,0 +1,311 @@
+[
+  {
+    "id": "55",
+    "name": "Surveillance",
+    "version": "1",
+    "form": {
+      "id" : "12",
+      "locationMode": "sur-ligne",
+      "interpellationEnable": "1"
+    },
+    "fields": [
+      {
+        "id": "20",
+        "type": "SPINNER",
+        "label": "Type d'intervention",
+        "value": "[\"test\",\"test2\",\"test3\",\"test4\"]",
+        "group": "0",
+        "order": "0",
+        "icon": "ic_place_black_36dp"
+      }, {
+        "id": "21",
+        "type": "EDIT_TEXT",
+        "label": "Autres informations...",
+        "value": "",
+        "group": "0",
+        "order": "1",
+        "icon": ""
+      }, {
+        "id": "22",
+        "type": "TEXT_VIEW",
+        "label": "",
+        "value": "Test long text Test long text Test long text Test long text Test long text",
+        "group": "1",
+        "order": "0",
+        "icon": "ic_assignment_ind_black_36dp"
+      }, {
+        "id": "23",
+        "type": "CHECKBOX",
+        "label": "Chef de l'opération",
+        "value": "",
+        "group": "1",
+        "order": "1",
+        "icon": ""
+      }, {
+        "id": "24",
+        "type": "DATE",
+        "label": "Date",
+        "value": "",
+        "group": "1",
+        "order": "2",
+        "icon": "ic_access_time_black_36dp"
+      }, {
+        "id": "25",
+        "type": "TIME",
+        "label": "Heure",
+        "value": "",
+        "group": "1",
+        "order": "3",
+        "icon": ""
+      }, {
+        "id": "26",
+        "type": "PLACE",
+        "label": "Lieu",
+        "value": "",
+        "group": "1",
+        "order": "4",
+        "icon": "ic_place_black_36dp"
+      }
+    ]
+  }, {
+    "id": "60",
+    "name": "Opération",
+    "version": "1",
+    "form": {
+      "id" : "6",
+      "locationMode": "hors-reseau",
+      "interpellationEnable": "0"
+    },
+    "fields": [
+      {
+        "id": "61",
+        "type": "SPINNER",
+        "label": "Nombre de personnes",
+        "value": "[\"1\",\"2\",\"3\",\"4\"]",
+        "group": "0",
+        "order": "0",
+        "icon": "ic_supervisor_account_black_36dp"
+      }
+    ]
+  }, {
+    "id": "90",
+    "name": "Conduite",
+    "version": "1",
+    "form": {
+      "id" : "6",
+      "locationMode": "lieu-fixe",
+      "interpellationEnable": "1"
+    },
+    "fields": [
+      {
+        "id": "61",
+        "type": "SPINNER",
+        "label": "Nombre de personnes",
+        "value": "[\"1\",\"2\",\"3\",\"4\"]",
+        "group": "0",
+        "order": "0",
+        "icon": "ic_supervisor_account_black_36dp"
+      }
+    ]
+  }, {
+    "id": "100",
+    "name": "Interpellation",
+    "version": "1",
+    "form": {
+      "id" : "20",
+      "locationMode": "lieu-fixe",
+      "interpellationEnable": "0"
+    },
+    "fields": [
+      {
+        "id": "100",
+        "type": "TIME",
+        "label": "hour:Heure",
+        "value": "",
+        "group": "0",
+        "order": "0",
+        "icon": "ic_access_time_black_36dp"
+      },
+      {
+        "id": "101",
+        "type": "PLACE",
+        "label": "Lieu",
+        "value": "",
+        "group": "0",
+        "order": "1",
+        "icon": "ic_place_black_36dp"
+      },
+      {
+        "id": "102",
+        "type": "EDIT_TEXT",
+        "label": "Référence",
+        "value": "",
+        "group": "1",
+        "order": "0",
+        "icon": "ic_assignment_black_36dp"
+      },
+      {
+        "id": "103",
+        "type": "EDIT_TEXT",
+        "label": "Service et cadre juridique",
+        "value": "",
+        "group": "1",
+        "order": "1",
+        "icon": ""
+      },
+      {
+        "id": "104",
+        "type": "SPINNER",
+        "label": "Affaire élucidée",
+        "value": "[\"En cours\",\"Terminé\"]",
+        "group": "1",
+        "order": "2",
+        "icon": ""
+      },
+      {
+        "id": "105",
+        "type": "EDIT_TEXT",
+        "label": "surname:NOM",
+        "value": "",
+        "group": "2",
+        "order": "0",
+        "icon": "ic_person_pin_black_36dp"
+      },
+      {
+        "id": "106",
+        "type": "EDIT_TEXT",
+        "label": "firstname:Prénom",
+        "value": "",
+        "group": "2",
+        "order": "1",
+        "icon": ""
+      },
+      {
+        "id": "107",
+        "type": "EDIT_TEXT",
+        "label": "Adresse",
+        "value": "",
+        "group": "2",
+        "order": "2",
+        "icon": ""
+      },
+      {
+        "id": "108",
+        "type": "DATE",
+        "label": "Date de naissance",
+        "value": "",
+        "group": "2",
+        "order": "3",
+        "icon": ""
+      },
+      {
+        "id": "109",
+        "type": "EDIT_TEXT",
+        "label": "Lieu de naissance",
+        "value": "",
+        "group": "2",
+        "order": "4",
+        "icon": ""
+      },
+      {
+        "id": "110",
+        "type": "EDIT_TEXT",
+        "label": "Taille",
+        "value": "",
+        "group": "3",
+        "order": "0",
+        "icon": "ic_accessibility_black_36dp"
+      },
+      {
+        "id": "111",
+        "type": "SPINNER",
+        "label": "Corpulence",
+        "value": "[\"Trapu\",\"Bla\"]",
+        "group": "3",
+        "order": "1",
+        "icon": ""
+      },
+      {
+        "id": "112",
+        "type": "SPINNER",
+        "label": "Type",
+        "value": "[\"Africain\",\"Bla\"]",
+        "group": "3",
+        "order": "2",
+        "icon": ""
+      },
+      {
+        "id": "113",
+        "type": "SPINNER",
+        "label": "Aspect des cheveux",
+        "value": "[\"Court\",\"Bla\"]",
+        "group": "3",
+        "order": "3",
+        "icon": ""
+      },
+      {
+        "id": "114",
+        "type": "SPINNER",
+        "label": "Couleur des cheveux",
+        "value": "[\"Noire\",\"Bla\"]",
+        "group": "3",
+        "order": "4",
+        "icon": ""
+      },
+      {
+        "id": "115",
+        "type": "SPINNER",
+        "label": "Yeux",
+        "value": "[\"Noirs\",\"Bla\"]",
+        "group": "3",
+        "order": "5",
+        "icon": ""
+      },
+      {
+        "id": "116",
+        "type": "EDIT_TEXT",
+        "label": "Signes particuliers",
+        "value": "",
+        "group": "4",
+        "order": "0",
+        "icon": "ic_description_black_36dp"
+      },
+      {
+        "id": "117",
+        "type": "EDIT_TEXT",
+        "label": "Tenue vestimentaire",
+        "value": "",
+        "group": "4",
+        "order": "1",
+        "icon": ""
+      },
+      {
+        "id": "118",
+        "type": "EDIT_TEXT",
+        "label": "Mode opératoire",
+        "value": "",
+        "group": "4",
+        "order": "2",
+        "icon": ""
+      },
+      {
+        "id": "119",
+        "type": "EDIT_TEXT",
+        "label": "Victime",
+        "value": "",
+        "group": "4",
+        "order": "3",
+        "icon": ""
+      },
+      {
+        "id": "120",
+        "type": "SPINNER",
+        "label": "Destination du mis en cause",
+        "value": "[\"Reconvoqué\",\"Bla\"]",
+        "group": "5",
+        "order": "0",
+        "icon": "ic_directions_black_36dp"
+      }
+    ]
+  }
+]

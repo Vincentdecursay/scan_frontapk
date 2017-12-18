@@ -1,0 +1,10 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.ipsis.scan.ui.TimePickerPreference
+        android:key="starting_hour"
+        android:title="@string/settings_starting_hour"/>
+
+    <com.ipsis.scan.ui.TimePickerPreference
+        android:key="ending_hour"
+        android:title="@string/settings_ending_hour"/>
+</PreferenceScreen>
