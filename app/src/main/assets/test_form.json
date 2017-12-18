@@ -1,0 +1,173 @@
+{
+	"id": "55",
+	"name": "Surveillance",
+	"version": "1",
+	"form": {
+		"id" : "",
+		"locationMode": "",
+		"interpellationEnable": ""
+	},
+	"groups": [
+		6, 6, 6
+	],
+	"fields": [
+		{
+			"id": "20",
+			"type": "EDIT_TEXT",
+			"label": "",
+			"value": "Entrez du texte",
+			"group": "0",
+			"order": "1",
+			"icon": "ic_place_black_36dp"
+		},
+		{
+			"id": "21",
+			"type": "SPINNER",
+			"label": "label",
+			"value": "",
+			"group": "1",
+			"order": "0",
+			"icon": "ic_place_black_36dp"
+		},
+		{
+			"id": "22",
+			"type": "CHECKBOX",
+			"label": "",
+			"value": "",
+			"group": "2",
+			"order": "0",
+			"icon": ""
+		},
+		{
+			"id": "23",
+			"type": "TIME",
+			"label": "",
+			"value": "",
+			"group": "0",
+			"order": "0",
+			"icon": "ic_access_time_black_36dp"
+		},
+		{
+			"id": "24",
+			"type": "SPINNER",
+			"label": "",
+			"value": "",
+			"group": "1",
+			"order": "2",
+			"icon": ""
+		},
+		{
+			"id": "25",
+			"type": "CHECKBOX",
+			"label": "",
+			"value": "",
+			"group": "2",
+			"order": "1",
+			"icon": ""
+		},{
+			"id": "26",
+			"type": "DATE",
+			"label": "",
+			"value": "",
+			"group": "0",
+			"order": "2",
+			"icon": "ic_today_black_36dp"
+		},
+		{
+			"id": "27",
+			"type": "SPINNER",
+			"label": "",
+			"value": "",
+			"group": "1",
+			"order": "1",
+			"icon": ""
+		},
+		{
+			"id": "28",
+			"type": "CHECKBOX",
+			"label": "",
+			"value": "",
+			"group": "2",
+			"order": "2",
+			"icon": ""
+		},{
+			"id": "29",
+			"type": "CHECKBOX",
+			"label": "Paramètre checkbox",
+			"value": "",
+			"group": "0",
+			"order": "3",
+			"icon": ""
+		},
+		{
+			"id": "30",
+			"type": "SPINNER",
+			"label": "",
+			"value": "",
+			"group": "1",
+			"order": "3",
+			"icon": ""
+		},
+		{
+			"id": "31",
+			"type": "CHECKBOX",
+			"label": "",
+			"value": "",
+			"group": "2",
+			"order": "3",
+			"icon": ""
+		},{
+			"id": "32",
+			"type": "SPINNER",
+			"label": "",
+			"value": "",
+			"group": "0",
+			"order": "4",
+			"icon": ""
+		},
+		{
+			"id": "33",
+			"type": "SPINNER",
+			"label": "",
+			"value": "",
+			"group": "1",
+			"order": "4",
+			"icon": ""
+		},
+		{
+			"id": "34",
+			"type": "CHECKBOX",
+			"label": "",
+			"value": "",
+			"group": "2",
+			"order": "4",
+			"icon": ""
+		},{
+			"id": "35",
+			"type": "EDIT_TEXT",
+			"label": "",
+			"value": "",
+			"group": "0",
+			"order": "5",
+			"icon": ""
+		},
+		{
+			"id": "36",
+			"type": "SPINNER",
+			"label": "",
+			"value": "",
+			"group": "1",
+			"order": "5",
+			"icon": ""
+		},
+		{
+			"id": "37",
+			"type": "CHECKBOX",
+			"label": "",
+			"value": "",
+			"group": "2",
+			"order": "5",
+			"icon": ""
+		}
+	]
+}

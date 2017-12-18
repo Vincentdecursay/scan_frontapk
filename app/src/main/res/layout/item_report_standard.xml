@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="8dp"
+            android:layout_height="20dp"
+            android:background="#1E88E5"
+            android:layout_alignParentTop="true"
+            android:layout_alignBottom="@+id/informationLayout" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="50dp"
+            android:layout_height="90dp"
+            android:orientation="vertical"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"
+            android:layout_centerVertical="true">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="18:58"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:id="@+id/startingHourTextView"
+                android:gravity="center"
+                android:layout_weight="0.25"/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="0dp"
+                android:id="@+id/imageView5"
+                android:src="@drawable/ic_arrow_down_black_36dp"
+                android:scaleType="fitCenter"
+                android:layout_weight="0.5"
+                android:layout_gravity="center_horizontal"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="19:58"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:id="@+id/endingHourTextView"
+                android:gravity="center"
+                android:layout_weight="0.25"/>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_toEndOf="@+id/linearLayout2"
+            android:layout_alignBottom="@+id/informationLayout"
+            android:background="#1e000000" />
+
+        <RelativeLayout
+            android:id="@+id/informationLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/linearLayout2"
+            android:paddingBottom="4dp">
+
+            <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="6dp"
+                android:text="Hors Réseaunaanaanaa"
+                android:textSize="16sp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:maxLines="3"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:layout_toStartOf="@+id/relativeLayout"
+                android:layout_above="@+id/missionTypeTextView" />
+
+            <TextView
+                android:id="@+id/missionTypeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:paddingBottom="8dp"
+                android:text="Surveillance"
+                android:textSize="14sp"
+                android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+            <RelativeLayout
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:id="@+id/relativeLayout">
+
+                <ImageView
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:id="@+id/interpellationImageView"
+                    android:src="@drawable/ic_arrest"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:id="@+id/interpellationNumberTextView"
+                    android:layout_alignTop="@+id/interpellationImageView"
+                    android:layout_alignEnd="@+id/interpellationImageView"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginEnd="14dp"/>
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

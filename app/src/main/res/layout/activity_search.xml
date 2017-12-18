@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#37000000">
+
+    <RelativeLayout
+        android:id="@+id/searchLayout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FFFFFF">
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_centerVertical="true"
+            android:padding="19dp"
+            android:src="@drawable/ic_arrow_back_grey_48dp"
+            android:clickable="true"
+            android:background="@drawable/ripple_white_background" />
+
+        <ImageView
+            android:id="@+id/clearButton"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:padding="20dp"
+            android:src="@drawable/ic_clear_grey_48dp"
+            android:clickable="true"
+            android:background="@drawable/ripple_white_background" />
+
+        <EditText
+            android:id="@+id/searchEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/backButton"
+            android:layout_toStartOf="@+id/clearButton"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:background="@android:color/transparent"
+            android:textSize="16sp"
+            android:inputType="text"
+            android:lines="1"
+            android:maxLines="1"
+            android:hint="@string/search_hint"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/noResultLayout"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/searchLayout"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:text="@string/search_no_result"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif-medium"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/resultLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/searchLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/historyTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="12dp"
+                android:paddingStart="16dp"
+                android:paddingBottom="4dp"
+                android:text="@string/search_history"
+                android:fontFamily="sans-serif-medium"
+                android:visibility="visible"/>
+            <ListView
+                android:id="@+id/resultListView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@+id/historyTextView"
+                android:background="#ffffff"
+                android:divider="@null"
+                android:dividerHeight="0dip">
+            </ListView>
+
+            <TextView
+                android:id="@+id/locationTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="12dp"
+                android:paddingStart="16dp"
+                android:paddingBottom="4dp"
+                android:text="@string/search_near_stations"
+                android:fontFamily="sans-serif-medium"
+                android:visibility="gone"/>
+            <ListView
+                android:id="@+id/stationsListView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#ffffff"
+                android:divider="@null"
+                android:dividerHeight="0dip"
+                android:visibility="gone">
+            </ListView>
+        </LinearLayout>
+    </ScrollView>
+
+    <View
+        android:id="@+id/closeButton"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@+id/resultLayout"
+        android:layout_alignParentBottom="true">
+    </View>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/searchLayout"
+        android:background="@drawable/toolbar_dropshadow" />
+</RelativeLayout>
