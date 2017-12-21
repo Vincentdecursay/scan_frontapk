@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.*;
 import android.widget.Button;
 import android.widget.TextView;
@@ -32,6 +33,8 @@ public class InitializationFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mActivity = (InitializationActivity) getActivity();
+        Log.i("activitest", "fragment " + mActivity.getLocalClassName()  );
+
 
         return inflater.inflate(R.layout.fragment_initialization, container, false);
     }

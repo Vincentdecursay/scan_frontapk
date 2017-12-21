@@ -67,11 +67,6 @@ dependencies {
     compile 'com.android.support:support-vector-drawable:25.0.1'
     compile 'com.getbase:floatingactionbutton:1.10.1'
 
-    compile 'com.google.firebase:firebase-core:10.0.0'
-    compile 'com.google.firebase:firebase-messaging:10.0.0'
-    compile 'com.google.android.gms:play-services-location:10.0.0'
-    compile 'com.google.android.gms:play-services-places:10.0.0'
-
     compile 'com.stanfy.enroscar:enroscar-goro:3.0.0-RC2'
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'io.reactivex:rxjava:1.2.7'
@@ -88,6 +83,3 @@ dependencies {
 }
 
 
-
-
-apply plugin: 'com.google.gms.google-services'

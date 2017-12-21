@@ -36,6 +36,9 @@ public class LockActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Log.i("activitest", "activité " + this.getLocalClassName()  );
+
+
         setContentView(R.layout.activity_lock);
 
         Typeface ubuntuBoldTypeface = Typeface.createFromAsset(getAssets(), "fonts/Ubuntu-B.ttf");

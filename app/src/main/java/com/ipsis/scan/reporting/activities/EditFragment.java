@@ -9,6 +9,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.*;
 import android.view.animation.AnimationUtils;
 import android.widget.*;
@@ -16,7 +17,6 @@ import com.ipsis.scan.R;
 import com.ipsis.scan.database.RatpDataSource;
 import com.ipsis.scan.database.model.Route;
 import com.ipsis.scan.database.model.Stop;
-import com.ipsis.scan.geolocation.LocationManager;
 import com.ipsis.scan.reporting.activities.search.SearchLocationActivity;
 import com.ipsis.scan.reporting.data.CacheManager;
 import com.ipsis.scan.reporting.edition.MissionValidation;
@@ -49,10 +49,6 @@ public class EditFragment extends Fragment {
      */
     private EditActivity mActivity;
 
-    /**
-     * Location manager
-     */
-    private LocationManager mLocationManager;
 
     /**
      * Current mission report
@@ -92,6 +88,8 @@ public class EditFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mActivity = (EditActivity) getActivity();
+        Log.i("activitest", "fragment " + mActivity.getLocalClassName()  );
+
 
         return inflater.inflate(R.layout.fragment_edit2, container, false);
     }
@@ -99,9 +97,6 @@ public class EditFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        mLocationManager = LocationManager.getInstance(getActivity());
-        mLocationManager.onStart();
 
         if (mActivity.getReportIndex() != -1) {
             mMissionReport = CacheManager.getInstance().getData().getMissionReports().get(mActivity.getReportIndex());
@@ -429,7 +424,6 @@ public class EditFragment extends Fragment {
     public void onDestroy() {
         super.onDestroy();
 
-        mLocationManager.onStop();
     }
 
     public void updateInterpellation() {
