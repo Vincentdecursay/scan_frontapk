@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import com.ipsis.scan.R;
 import com.ipsis.scan.reporting.edition.model.MissionReport;
@@ -37,6 +38,8 @@ public class CreateActivity extends ReportingActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.i("activitest", "activité " + this.getLocalClassName()  );
+
 
         mType = getIntent().getIntExtra(EXTRA_FORM_TYPE, Constants.TYPE_HORS_RESEAU);
         mDateTimeStart = getIntent().getStringExtra(EXTRA_FORM_DATE_TIME_START);

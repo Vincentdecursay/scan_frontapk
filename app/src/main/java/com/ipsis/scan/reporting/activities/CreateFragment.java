@@ -8,18 +8,17 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.google.firebase.analytics.FirebaseAnalytics;
 import com.ipsis.scan.R;
 import com.ipsis.scan.database.RatpDataSource;
 import com.ipsis.scan.database.model.Route;
 import com.ipsis.scan.database.model.Stop;
-import com.ipsis.scan.geolocation.LocationManager;
 import com.ipsis.scan.reporting.activities.search.SearchLocationActivity;
 import com.ipsis.scan.reporting.data.CacheManager;
 import com.ipsis.scan.reporting.edition.MissionValidation;
@@ -47,21 +46,6 @@ public class CreateFragment extends Fragment {
      * Activity
      */
     private CreateActivity mActivity;
-
-    /**
-     * Location manager
-     */
-    private LocationManager mLocationManager;
-
-    /**
-     * Stop mLocationManager if no report is created
-     */
-    private boolean mStopLocationManager;
-
-    /**
-     * Firebase analytics
-     */
-    private FirebaseAnalytics mFirebaseAnalytics;
 
     /**
      * Mission forms for the current type
@@ -98,7 +82,6 @@ public class CreateFragment extends Fragment {
 
         mMissionTypeIndex = -1;
 
-        mStopLocationManager = true;
     }
 
 
@@ -106,6 +89,8 @@ public class CreateFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mActivity = (CreateActivity) getActivity();
+        Log.i("activitest", "fragment " + mActivity.getLocalClassName()  );
+
 
         return inflater.inflate(R.layout.fragment_create, container, false);
     }
@@ -113,12 +98,6 @@ public class CreateFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        // Obtain the FirebaseAnalytics instance.
-        mFirebaseAnalytics = FirebaseAnalytics.getInstance(getActivity());
-
-        mLocationManager = LocationManager.getInstance(getActivity());
-        mLocationManager.onStart();
 
         mTimePicker = (TextViewTimePicker) view.findViewById(R.id.timeTextView);
         mLocationPicker = (TextView) view.findViewById(R.id.locationTextView);
@@ -311,9 +290,7 @@ public class CreateFragment extends Fragment {
     public void onDestroy() {
         super.onDestroy();
 
-        if (mStopLocationManager) {
-            mLocationManager.onStop();
-        }
+
     }
 
     private void initReport() {
@@ -372,11 +349,7 @@ public class CreateFragment extends Fragment {
             missionReport.setRoute(mRoute);
             missionReport.setLocationStart(mStartingLocationTextView.getText().toString());
             missionReport.setLocationEnd(mEndingLocationTextView.getText().toString());
-            if (mLocationManager.getCurrentLocation() != null) {
-                missionReport.setLocationUser(mLocationManager.getCurrentLocation().getLatitude() + "," + mLocationManager.getCurrentLocation().getLongitude());
-            } else {
-                missionReport.setLocationUser("");
-            }
+            missionReport.setLocationUser("");
 
             // add the new report TODO move to cachemanager or cachedata
             ArrayList<MissionReport> reports = CacheManager.getInstance().getData().getMissionReports();
@@ -413,8 +386,6 @@ public class CreateFragment extends Fragment {
                             Intent intent = new Intent(getContext(), EditActivity.class);
                             intent.putExtra(EditActivity.EXTRA_REPORT_INDEX, CacheManager.getInstance().getData().getMissionReports().size() - 1);
                             startActivity(intent);
-
-                            mStopLocationManager = false;
 
                             mActivity.finish();
                         }
@@ -472,14 +443,7 @@ public class CreateFragment extends Fragment {
     }
 
     private void sendFirebaseEvent() {
-        if (mLocationManager.getCurrentLocation() != null) {
-            Bundle interpellationEventParams = new Bundle();
-            interpellationEventParams.putLong("rapport_time", mLocationManager.getCurrentLocation().getTime());
-            interpellationEventParams.putDouble("rapport_lon", mLocationManager.getCurrentLocation().getLongitude());
-            interpellationEventParams.putDouble("rapport_lat", mLocationManager.getCurrentLocation().getLatitude());
 
-            mFirebaseAnalytics.logEvent("rapport_new", interpellationEventParams);
-        }
     }
 
     public class UpdateStopsTask extends Thread {

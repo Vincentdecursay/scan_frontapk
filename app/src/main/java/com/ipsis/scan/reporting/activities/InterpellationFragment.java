@@ -7,14 +7,13 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.*;
 import android.widget.*;
-import com.google.firebase.analytics.FirebaseAnalytics;
 import com.ipsis.scan.R;
 import com.ipsis.scan.database.RatpDataSource;
 import com.ipsis.scan.database.model.Route;
 import com.ipsis.scan.database.model.Stop;
-import com.ipsis.scan.geolocation.LocationManager;
 import com.ipsis.scan.reporting.activities.search.SearchLocationActivity;
 import com.ipsis.scan.reporting.communication.service.SynchronisationClient;
 import com.ipsis.scan.reporting.data.CacheManager;
@@ -55,9 +54,6 @@ public class InterpellationFragment extends Fragment {
     private TextView mStartingLocationTextView;
     private TextView mEndingLocationTextView;
 
-    private LocationManager mLocationManager;
-
-    private FirebaseAnalytics mFirebaseAnalytics;
 
     private SynchronisationClient mSynchronisationClient;
 
@@ -74,6 +70,9 @@ public class InterpellationFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mActivity = (InterpellationActivity) getActivity();
 
+        Log.i("activitest", "fragment " + mActivity.getLocalClassName()  );
+
+
         setHasOptionsMenu(true);
 
         return inflater.inflate(R.layout.fragment_interpellation, container, false);
@@ -82,12 +81,6 @@ public class InterpellationFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        // Obtain the FirebaseAnalytics instance.
-        mFirebaseAnalytics = FirebaseAnalytics.getInstance(getActivity());
-
-        mLocationManager = LocationManager.getInstance(getActivity());
-        mLocationManager.onStart();
 
         mSynchronisationClient = new SynchronisationClient(getContext());
 
@@ -114,11 +107,7 @@ public class InterpellationFragment extends Fragment {
                 mMissionInterpellationReport.setRoute(mMissionReport.getRoute());
             }
 
-            if (mLocationManager.getCurrentLocation() != null) {
-                mMissionInterpellationReport.setLocationUser(mLocationManager.getCurrentLocation().getLatitude() + "," + mLocationManager.getCurrentLocation().getLongitude());
-            } else {
-                mMissionInterpellationReport.setLocationUser("");
-            }
+            mMissionInterpellationReport.setLocationUser("");
 
             interpellations.add(mMissionInterpellationReport);
 
@@ -398,13 +387,7 @@ public class InterpellationFragment extends Fragment {
     }
 
     private void sendFirebaseEvent() {
-        if (mLocationManager.getCurrentLocation() != null) {
-            Bundle interpellationEventParams = new Bundle();
-            interpellationEventParams.putLong("interpellation_time", mLocationManager.getCurrentLocation().getTime());
-            interpellationEventParams.putDouble("interpellation_lon", mLocationManager.getCurrentLocation().getLongitude());
-            interpellationEventParams.putDouble("interpellation_lat", mLocationManager.getCurrentLocation().getLatitude());
-            mFirebaseAnalytics.logEvent("interpellation_new", interpellationEventParams);
-        }
+
     }
 
     public class UpdateStopsTask extends Thread {

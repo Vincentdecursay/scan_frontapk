@@ -51,6 +51,8 @@ public class AboutActivity extends AppCompatPreferenceActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setupActionBar();
+        Log.i("activitest", "activité " + this.getLocalClassName()  );
+
     }
 
     /**

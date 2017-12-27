@@ -14,9 +14,6 @@ import android.util.Log;
 import android.view.*;
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GoogleApiAvailability;
-import com.google.firebase.iid.FirebaseInstanceId;
 import com.ipsis.scan.R;
 import com.ipsis.scan.communication.sending.NetworkManager;
 import com.ipsis.scan.encryption.EncryptionManager;
@@ -44,11 +41,6 @@ public class SummaryActivity extends ReportingActivity {
     private static final String TAG = SummaryActivity.class.getSimpleName();
 
     /**
-     * Request Id pour la vérification de Google Play Services
-     */
-    private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
-
-    /**
      * Menu drawer
      */
     private DrawerLayout mDrawerLayout;
@@ -70,6 +62,9 @@ public class SummaryActivity extends ReportingActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_summary);
 
+        Log.i("activitest", "activité " + this.getLocalClassName()  );
+
+
         /*if (checkPlayServices()) {
             Intent intent = new Intent(this, RegistrationIntentService.class);
             startService(intent);
@@ -81,13 +76,6 @@ public class SummaryActivity extends ReportingActivity {
             finish();
 
             return;
-        }
-
-        String token = FirebaseInstanceId.getInstance().getToken();
-        if (token != null) {
-            Log.e(TAG, "Token: " + token);
-        } else {
-            Log.e(TAG, "Waiting for firebase token...");
         }
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -278,25 +266,7 @@ public class SummaryActivity extends ReportingActivity {
         }
     }
 
-    /**
-     * Vérifie la présence des services Google
-     *
-     * @return true si supportés
-     */
-    private boolean checkPlayServices() {
-        GoogleApiAvailability apiAvailability = GoogleApiAvailability.getInstance();
-        int resultCode = apiAvailability.isGooglePlayServicesAvailable(this);
-        if (resultCode != ConnectionResult.SUCCESS) {
-            if (apiAvailability.isUserResolvableError(resultCode)) {
-                apiAvailability.getErrorDialog(this, resultCode, PLAY_SERVICES_RESOLUTION_REQUEST).show();
-            } else {
-                Log.i(TAG, "This device is not supported.");
-                finish();
-            }
-            return false;
-        }
-        return true;
-    }
+
 
     public void setLastDateTimeEnd(String lastDateTimeEnd) {
         mLastDateTimeEnd = lastDateTimeEnd;

@@ -16,14 +16,11 @@ import android.util.Log;
 import android.view.*;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.*;
-import com.google.android.gms.location.places.AutocompletePrediction;
-import com.google.android.gms.location.places.AutocompletePredictionBuffer;
 import com.ipsis.scan.R;
 import com.ipsis.scan.database.PlaceDataSource;
 import com.ipsis.scan.database.RatpDataSource;
 import com.ipsis.scan.database.model.Route;
 import com.ipsis.scan.database.model.Stop;
-import com.ipsis.scan.geolocation.LocationManager;
 import com.ipsis.scan.reporting.data.CacheManager;
 import com.ipsis.scan.reporting.edition.model.MissionLocation;
 import com.ipsis.scan.security.locking.LockManager;
@@ -38,7 +35,7 @@ import java.util.List;
 /**
  * Created by etude on 23/10/15.
  */
-public class SearchLocationActivity extends AppCompatActivity implements PlaceDataSource.PlaceResultCallback {
+public class SearchLocationActivity extends AppCompatActivity {
 
     public final static String EXTRA_SEARCH_TYPE = "type";
     public final static String EXTRA_SEARCH_LOCATION = "location";
@@ -52,7 +49,6 @@ public class SearchLocationActivity extends AppCompatActivity implements PlaceDa
     private MissionLocation mLocation;
 
     private RatpDataSource mRatpDataSource;
-    private PlaceDataSource mPlaceDataSource;
 
     private ListView mResultListView;
     private final ArrayList<SearchResult> mSearchResults;
@@ -77,6 +73,7 @@ public class SearchLocationActivity extends AppCompatActivity implements PlaceDa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+        Log.i("activitest", "activité SearchLocationActivity ");
 
         mType = getIntent().getIntExtra(EXTRA_SEARCH_TYPE, Constants.TYPE_SEARCH_ROUTE);
 
@@ -86,7 +83,6 @@ public class SearchLocationActivity extends AppCompatActivity implements PlaceDa
         }
 
         mRatpDataSource = new RatpDataSource(this);
-        mPlaceDataSource = new PlaceDataSource(this);
 
         mResultListView = (ListView) findViewById(R.id.resultListView);
         mSearchResultAdapter = new SearchResultAdapter(this, mSearchResults);
@@ -199,9 +195,6 @@ public class SearchLocationActivity extends AppCompatActivity implements PlaceDa
         updateSearchResults();
         search(mSearchEditText.getText().toString());
 
-        if (mType == Constants.TYPE_SEARCH_STOP) {
-            new SearchCloseStopTask().start();
-        }
     }
 
     private void updateSearchResults() {
@@ -326,7 +319,6 @@ public class SearchLocationActivity extends AppCompatActivity implements PlaceDa
                     }
                     mSearchResultAdapter.notifyDataSetChanged();
                 }
-                mPlaceDataSource.search(search, this);
                 break;
         }
     }
@@ -335,14 +327,12 @@ public class SearchLocationActivity extends AppCompatActivity implements PlaceDa
     protected void onStart() {
         super.onStart();
 
-        mPlaceDataSource.onStart();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
 
-        mPlaceDataSource.onStop();
     }
 
     @Override
@@ -472,85 +462,6 @@ public class SearchLocationActivity extends AppCompatActivity implements PlaceDa
                     }
                 });
             }
-        }
-    }
-
-    private class SearchCloseStopTask extends Thread {
-        @Override
-        public void run() {
-            Location location = LocationManager.getInstance(SearchLocationActivity.this).getCurrentLocation();
-            if (location != null) {
-                List<Stop> stops;
-                synchronized (mRatpDataSource) {
-                    stops = mRatpDataSource.searchStop(location);
-                }
-
-                List<Stop> filteredStops = new ArrayList<>();
-
-                for (Stop stop : stops) {
-                    boolean found = false;
-
-                    for (Stop filteredStop : filteredStops) {
-                        if (stop.getName().equals(filteredStop.getName())) {
-                            found = true;
-
-                            break;
-                        }
-                    }
-
-                    if (!found) {
-                        filteredStops.add(stop);
-                    }
-                }
-
-                synchronized (mSearchStationsResults) {
-                    mSearchStationsResults.clear();
-
-                    for (Stop stop : filteredStops) {
-                        SearchResult searchResult = new SearchResult(new MissionLocation(stop.getName()));
-                        searchResult.setTag(stop);
-                        mSearchStationsResults.add(searchResult);
-                    }
-
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            mSearchStationsResultAdapter.notifyDataSetChanged();
-
-                            if (mSearchStationsResults.size() > 0 && mSearchEditText.getText().length() == 0) {
-                                mLocationTextView.setVisibility(View.VISIBLE);
-                                mStationsListView.setVisibility(View.VISIBLE);
-                            } else {
-                                mLocationTextView.setVisibility(View.GONE);
-                                mStationsListView.setVisibility(View.GONE);
-                            }
-                        }
-                    });
-                }
-            }
-        }
-    }
-
-    @Override
-    public void onPlaceResult(AutocompletePredictionBuffer locations) {
-        synchronized (mSearchResults) {
-            mSearchResults.clear();
-
-            CharacterStyle STYLE_BOLD = new StyleSpan(Typeface.BOLD);
-
-            mSearchResults.add(new SearchResult(new MissionLocation(mSearchEditText.getText().toString())));
-
-            for (AutocompletePrediction prediction : locations) {
-                SearchResult searchResult = new SearchResult(new MissionLocation(prediction.getFullText(STYLE_BOLD).toString()));
-                mSearchResults.add(searchResult);
-            }
-
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    mSearchResultAdapter.notifyDataSetChanged();
-                }
-            });
         }
     }
 }

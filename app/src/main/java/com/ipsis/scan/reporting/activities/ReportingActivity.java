@@ -36,6 +36,9 @@ public class ReportingActivity extends AppCompatActivity implements CacheManager
     protected void onStart() {
         super.onStart();
 
+        Log.i("activitest", "activité " + this.getLocalClassName()  );
+
+
         final TextView dateTextView = (TextView) findViewById(R.id.dateTextView);
         final TextView timeTextView = (TextView) findViewById(R.id.timeTextView);
 

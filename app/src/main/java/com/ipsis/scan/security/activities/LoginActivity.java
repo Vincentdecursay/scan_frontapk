@@ -81,6 +81,9 @@ public class LoginActivity extends AppCompatActivity implements AuthenticationRe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Log.i("activitest", "activité " + this.getLocalClassName()  );
+
+
         setContentView(R.layout.activity_login);
 
         mPreferences = getSharedPreferences(LOGIN_PREFERENCES, Context.MODE_PRIVATE);

@@ -61,6 +61,9 @@ public class SummaryFragment extends Fragment implements MissionReport.SyncCallb
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mActivity = (SummaryActivity) getActivity();
 
+        Log.i("activitest", "fragment " + mActivity.getLocalClassName()  );
+
+
         mPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
         // mShowAllDay = mPreferences.getBoolean(SHOW_ALL_DAY_PREFERENCE, true); TODO
         mShowAllDay = true;
